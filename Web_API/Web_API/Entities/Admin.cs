@@ -12,5 +12,7 @@ namespace Web_API.Entities
         public string Nickname { get; set; }
 
         public DateTime RegestrationDate { get; set; }
+
+        public virtual List<Message> Messages { get; set; } = new List<Message>();
     }
 }

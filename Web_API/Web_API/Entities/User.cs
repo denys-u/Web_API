@@ -13,5 +13,7 @@ namespace Web_API.Entities
 
         public DateTime RegestrationDate { get; set; }
 
+        public virtual List<Message> Messages { get; set; } = new List<Message>();
+
     }
 }
