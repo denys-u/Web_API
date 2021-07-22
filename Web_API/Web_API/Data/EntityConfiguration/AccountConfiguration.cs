@@ -8,13 +8,15 @@ using Web_API.Entities;
 
 namespace Web_API.EntityConfiguration
 {
-    public class AdminConfiguration : IEntityTypeConfiguration<Admin>
+    public class AccountConfiguration : IEntityTypeConfiguration<Account>
     {
-        public void Configure(EntityTypeBuilder<Admin> builder)
+        public void Configure(EntityTypeBuilder<Account> builder)
         {
             builder.ToTable("Admin").HasKey(p => p.Id);
             builder.Property(p => p.Id).HasColumnName("AdminId");
             builder.Property(p => p.Nickname).IsRequired().HasColumnName("Nickname").HasMaxLength(50);
+            builder.Property(p => p.Email).IsRequired().HasColumnName("Email").HasMaxLength(50);
+            builder.Property(p => p.Password).IsRequired().HasColumnName("Password").HasMaxLength(50);
             builder.Property(p => p.RegestrationDate).IsRequired().HasColumnName("RegestrationDate").HasColumnType("datetime2");
         }
     }

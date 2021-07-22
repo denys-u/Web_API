@@ -8,14 +8,13 @@ using Web_API.Entities;
 
 namespace Web_API.EntityConfiguration
 {
-    public class UserConfiguration : IEntityTypeConfiguration<User>
+    public class RoleConfiguration : IEntityTypeConfiguration<Role>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("User").HasKey(p => p.Id);
             builder.Property(p => p.Id).HasColumnName("UserId");
-            builder.Property(p => p.Nickname).IsRequired().HasColumnName("Nickname").HasMaxLength(50);
-            builder.Property(p => p.RegestrationDate).IsRequired().HasColumnName("RegestrationDate").HasColumnType("datetime2");
+            builder.Property(p => p.RoleName).IsRequired().HasColumnName("RoleName").HasMaxLength(50);
         }
     }
 }

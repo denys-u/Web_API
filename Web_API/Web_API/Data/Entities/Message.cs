@@ -11,12 +11,8 @@ namespace Web_API.Entities
 
         public DateTime DateOfTransmission { get; set; }
 
-        public int UserId { get; set; }
+        public string AccountId { get; set; }
 
-        public virtual User User { get; set; }
-
-        public int AdminId { get; set; }
-
-        public virtual Admin Admin { get; set; }
+        public Account Account { get; set; }
     }
 }
